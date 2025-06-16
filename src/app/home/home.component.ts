@@ -21,6 +21,16 @@ import { FormsModule } from '@angular/forms'; // ✅ Import this
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
+
+  // keyUpHandler(){
+  //   console.log('user pressed the key!');
+  // }
+
+  keyUpHandler(event: KeyboardEvent){
+    console.log('user press the '+event.key+' key!');
+  }
+
+  //code
   email: string = '';
   password: string = '';
 

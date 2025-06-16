@@ -13,6 +13,7 @@
             [(ngModel)]="email"
             name="email"
             required
+            (keyup)="keyUpHandler($event)"
           />
         </div>
 
