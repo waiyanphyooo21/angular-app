@@ -18,4 +18,8 @@ export class AppComponent {
     this.user.isAdmin = true;
     this.isValid = true;
   }
+  user(){
+    this.user.isAdmin = false;
+    this.isValid = false;
+  }
 }

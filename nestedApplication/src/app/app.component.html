@@ -2,5 +2,8 @@
 <app-parent></app-parent>
 <div>
   <button (click)="admin()">Admin</button>
-  <button (click)="user()">User</button>
+  <button (click)="userbio()">User</button>
+</div>
+<div *ngIf="isValid">
+<app-admin-bio></app-admin-bio>
 </div>
