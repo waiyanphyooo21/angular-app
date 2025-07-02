@@ -3,10 +3,11 @@ import { RouterOutlet } from '@angular/router';
 import { ParentComponent } from './parent/parent.component';
 import { AdminBioComponent } from './admin-bio/admin-bio.component';
 import { UserBioComponent } from './user-bio/user-bio.component';
+import { CheckBioComponent } from "./check-bio/check-bio.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, ParentComponent,AdminBioComponent,UserBioComponent],
+  imports: [RouterOutlet, ParentComponent, AdminBioComponent, UserBioComponent, CheckBioComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -18,8 +19,8 @@ export class AppComponent {
     this.user.isAdmin = true;
     this.isValid = true;
   }
-  user(){
+  userbio(){
     this.user.isAdmin = false;
-    this.isValid = false;
+    this.isValid = true;
   }
 }
