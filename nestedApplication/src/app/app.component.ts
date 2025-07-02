@@ -4,10 +4,11 @@ import { ParentComponent } from './parent/parent.component';
 import { AdminBioComponent } from './admin-bio/admin-bio.component';
 import { UserBioComponent } from './user-bio/user-bio.component';
 import { CheckBioComponent } from "./check-bio/check-bio.component";
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, ParentComponent, AdminBioComponent, UserBioComponent, CheckBioComponent],
+  imports: [RouterOutlet, ParentComponent, CheckBioComponent, CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
