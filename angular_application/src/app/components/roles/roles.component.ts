@@ -20,4 +20,7 @@ export class RolesComponent {
     alert(`Welcome to Angular ${this.angularVersion} Development!`)
   }
 
+  showMessage(message: string){
+    alert(message)
+  }
 }
