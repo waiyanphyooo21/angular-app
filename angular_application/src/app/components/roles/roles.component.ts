@@ -13,5 +13,11 @@ import {FormsModule} from '@angular/forms';
 export class RolesComponent {
   firstName: string = 'John';
   angularVersion: number = 19;
+  currentDate: Date = new Date();
+  selectedType = "checkbox";
+  selectedCity: "" | undefined;
+  showWelcomerAlert(){
+    alert(`Welcome to Angular ${this.angularVersion} Development!`)
+  }
 
 }
