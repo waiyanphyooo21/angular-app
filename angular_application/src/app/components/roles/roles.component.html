@@ -42,7 +42,7 @@
     </div>
   </div>
  -->
-<!-- 
+
  <div class="container">
   <div class="row">
     <div class="col-4">
@@ -51,23 +51,14 @@
           {{item.role}}
         </li>
       </ul>
-      <ul>
-      <li *ngFor="let r of rolelist">
-        {{ r.roleID }} - {{ r.role }}
-      </li>
-    </ul>
     </div>
-  </div>
- </div> -->
-
- <div class="container">
-  <div class="row">
     <div class="col-4">
-      <ul>
-        <li *ngFor="let r of rolelist">
-          {{ r.roleId }} - {{ r.role }}
-        </li>
-      </ul>
+      <select class="form-control">
+        <option *ngFor="let item of rolelist" [value]="item.roleId">{{item.role}}</option>
+      </select>
+    </div>
+    <div class="col-4">
+      <button class="btn btn-primary" *ngFor="let item of rolelist">{{item.role}}</button>
     </div>
   </div>
-</div>
+ </div>
