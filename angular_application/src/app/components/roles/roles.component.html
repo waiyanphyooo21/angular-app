@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
   <div class="row">
       <div class="col-3">
         <p>{{firstName}}</p>
@@ -34,8 +34,23 @@
         <button class="btn btn-primary " (click)="showWelcomerAlert()">Show Alert!</button>
       </div>
       <div class="col">
-        <button class="btn btn-primary " (click)="showMessage('Welcome React')">Show Alert!</button>
+        <button class="btn btn-primary " (click)="showMessage('Welcome React')">Show React Message!</button>
+      </div>
+      <div class="col">
+        <button class="btn btn-primary " (click)="showMessage('Welcome .Net')">Show .Net Message!</button>
       </div>
     </div>
   </div>
+ -->
 
+ <div class="container">
+  <div class="row">
+    <div class="col-4">
+      <ul>
+        <li *ngFor="let item of rolelist">
+          {{item.role}}
+        </li>
+      </ul>
+    </div>
+  </div>
+ </div>
