@@ -21,9 +21,11 @@
 // }
 
 import { Component, OnInit, inject, signal } from '@angular/core';
-import { TodoServiceService } from '../services/todo.service.service';
+
 import { Todo } from '../model/todo.type';
 import { CommonModule } from '@angular/common';
+import { catchError } from 'rxjs';
+import { TodosService } from '../services/todos.service';
 
 @Component({
   selector: 'app-todos',
@@ -33,13 +35,22 @@ import { CommonModule } from '@angular/common';
   styleUrl: './todos.component.scss'
 })
 export class TodosComponent implements OnInit {
-  todoService = inject(TodoServiceService);
+  todoService = inject(TodosService);
   todoItems = signal<Array<Todo>>([]);
 
   searchTerm = signal('');
 
   ngOnInit(): void {
-    const todos = this.todoService.getTodos();
-    this.todoItems.set(todos);
+    // const todos = this.todoService.getTodos();
+    // this.todoItems.set(todos);
+
+    this.todoService.getTodosFormAPI().pipe(
+      catchError((error) => {
+        console.log(error);
+        throw error;
+      })
+    ).subscribe((todos)=>{
+      this.todoItems.set(todos);
+    })
   }
 }
