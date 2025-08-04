@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 
 @Component({
   selector: 'app-todo-item',
@@ -7,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrl: './todo-item.component.scss'
 })
 export class TodoItemComponent {
-
+  todo=input.required<Todo>();
+  todoToggle=output<Todo>();
+  todoClicked(){
+    this.todoToggle.emit(this.todo());
+  }
 }
