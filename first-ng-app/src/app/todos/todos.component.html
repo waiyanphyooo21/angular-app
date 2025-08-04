@@ -15,7 +15,9 @@
   } -->
     @for (todo of todoItems(); track $index){
     <div class="form-check">
-      <app-todo-item [todo]="todo"></app-todo-item>
+      <app-todo-item 
+      [todo]="todo"
+      (todoToggle)="todo.completed = !todo.completed"></app-todo-item>
     </div>
   }
 </div>

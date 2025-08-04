@@ -3,7 +3,8 @@
     id="todo-{{todo().id}}"
     type="checkbox"  
     class="form-check-input"
-    [checked]="todo().completed">
+    [checked]="todo().completed"
+    (change)="todoClicked()">
     <label for="" id="todo-{{todo().id}}" class="form-check-label">
         {{todo().title | uppercase }}
     </label>
