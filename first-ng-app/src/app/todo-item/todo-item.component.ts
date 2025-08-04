@@ -1,4 +1,5 @@
 import { Component, input, output } from '@angular/core';
+import { Todo } from '../model/todo.type';
 
 @Component({
   selector: 'app-todo-item',

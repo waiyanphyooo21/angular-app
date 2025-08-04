@@ -38,11 +38,12 @@ import { Todo } from '../model/todo.type';
 import { CommonModule } from '@angular/common';
 import { catchError } from 'rxjs';
 import { TodosService } from '../services/todos.service';
+import { TodoItemComponent } from '../todo-item/todo-item.component';
 
 @Component({
   selector: 'app-todos',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TodoItemComponent],
   templateUrl: './todos.component.html',
   styleUrl: './todos.component.scss'
 })
