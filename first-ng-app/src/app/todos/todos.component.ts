@@ -36,33 +36,50 @@
 import { Component, OnInit, inject, signal } from '@angular/core';
 import { Todo } from '../model/todo.type';
 import { CommonModule } from '@angular/common';
-import { catchError } from 'rxjs';
 import { TodosService } from '../services/todos.service';
 import { TodoItemComponent } from '../todo-item/todo-item.component';
+import { FilterTodosPipe } from "../pipes/filter-todos.pipe";
 
 @Component({
   selector: 'app-todos',
   standalone: true,
-  imports: [CommonModule, TodoItemComponent],
+  imports: [CommonModule, TodoItemComponent, FilterTodosPipe],
   templateUrl: './todos.component.html',
-  styleUrl: './todos.component.scss'
+  styleUrls: ['./todos.component.scss']  
 })
 export class TodosComponent implements OnInit {
+
   todoService = inject(TodosService);
   todoItems = signal<Todo[]>([]);
-  loading = signal(true); 
+  loading = signal(true);
+  searchTerm = '';  
 
   ngOnInit(): void {
-  this.loading.set(true);
+    this.loading.set(true);
 
-  this.todoService.getTodosFormAPI().subscribe(todos => {
-    setTimeout(() => {
-      this.todoItems.set(todos);
+    this.todoService.getTodosFormAPI().subscribe(todos => {
+      setTimeout(() => {
+        this.todoItems.set(todos);
+        this.loading.set(false);
+      }, 500);
+    }, error => {
+      console.error(error);
       this.loading.set(false);
-    }, 500); 
-  }, error => {
-    console.error(error);
-    this.loading.set(false);
-  });
+    });
+  }
+
+  updateToDoItems(todoItem: Todo) {
+    this.todoItems.update(todos => {
+      return todos.map(todo => {
+        if (todo.id === todoItem.id) {
+          return {
+            ...todo,
+            completed: !todo.completed,
+          };
+        }
+        return todo;
+      });
+    });
+  }
 }
-}
+
