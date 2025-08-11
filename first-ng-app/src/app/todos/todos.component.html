@@ -24,7 +24,7 @@
     <div class="form-check">
       <app-todo-item 
       [todo]="todo"
-      (todoToggle)="updateToDoItems($event)"></app-todo-item> 12345678
+      (todoToggle)="updateToDoItems($event)"></app-todo-item> 1234567
     </div>
   } -->
     <div *ngFor="let todo of todoItems() | filterTodos: searchTerm; let i = index" class="form-check">
