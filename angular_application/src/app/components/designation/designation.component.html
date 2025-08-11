@@ -1,0 +1,17 @@
+<!-- <p>designation worksss!</p> -->
+
+<div class="container">
+    <div class="row">
+        @for (item of designationList; track item.designationId) {
+            <div class="col-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">{{item.designation}}</h4>
+                        <a href="#" class="card-link">Edit</a>
+                        <a href="#" class="card-link">Delete</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

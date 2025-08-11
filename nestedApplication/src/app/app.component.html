@@ -1,0 +1,9 @@
+<h2>nestedApplication</h2>
+<app-parent></app-parent>
+<div>
+  <button (click)="admin()">Admin</button>
+  <button (click)="userbio()">User</button>
+</div>
+<div *ngIf="isValid">
+<app-check-bio [user]="user"></app-check-bio>
+</div>

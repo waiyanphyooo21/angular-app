@@ -1,0 +1,23 @@
+<!--<div class="btn-group">-->
+<!--  <button class="btn btn-primary" (click)="changeTab('roles')">Roles</button>-->
+<!--  <button class="btn btn-danger"(click)="changeTab('designation')">Designation</button>-->
+<!--</div>-->
+
+<!--<div class="container" *ngIf="currentComponents=='roles'">-->
+<!--  <app-roles></app-roles>-->
+<!--</div>-->
+<!--<div class="container">-->
+<!--  <app-designation> </app-designation>-->
+<!--</div>-->
+
+<div class="btn-group">
+  <button class="btn btn-primary" (click)="changeTab('roles')">Roles</button>
+  <button class="btn btn-primary" (click)="changeTab('designation')">Designation</button>
+</div>
+
+<div class="container" *ngIf="currentComponents=='roles'">
+  <app-roles></app-roles>
+</div>
+<div class="container" *ngIf="currentComponents=='designation'" >
+  <app-designation> </app-designation>
+</div>

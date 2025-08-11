@@ -1,0 +1,64 @@
+<!-- <div class="container">
+  <div class="row">
+      <div class="col-3">
+        <p>{{firstName}}</p>
+      </div>
+    <div class="col-3">
+      <p>{{angularVersion}}</p>
+    </div><div class="col-3">
+      <p>{{currentDate}}</p>
+    </div>
+    </div><div class="col-3">
+      <p>{{selectedCity}}</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-3">
+      <input type="text" [(ngModel)]="firstName">
+    </div>
+    <div class="col-3">
+      <input type="text" [value]="firstName">
+    </div>
+    <div class="col-3">
+      <input [type]="selectedType">
+    </div>
+    <div class="col-3">
+      <select [(ngModel)]="selectedCity">
+        <option value="yangon">Yangon</option>
+        <option value="mandalay">Mandalay</option>
+        <option value="naypyitaw">Naypyitaw</option>
+      </select>
+    </div>
+    <div class="row mt-3">
+      <div class="col">
+        <button class="btn btn-primary " (click)="showWelcomerAlert()">Show Alert!</button>
+      </div>
+      <div class="col">
+        <button class="btn btn-primary " (click)="showMessage('Welcome React')">Show React Message!</button>
+      </div>
+      <div class="col">
+        <button class="btn btn-primary " (click)="showMessage('Welcome .Net')">Show .Net Message!</button>
+      </div>
+    </div>
+  </div>
+ -->
+
+ <div class="container">
+  <div class="row">
+    <div class="col-4">
+      <ul>
+        <li *ngFor="let item of rolelist">
+          {{item.role}}
+        </li>
+      </ul>
+    </div>
+    <div class="col-4">
+      <select class="form-control">
+        <option *ngFor="let item of rolelist" [value]="item.roleId">{{item.role}}</option>
+      </select>
+    </div>
+    <div class="col-4">
+      <button class="btn btn-primary" *ngFor="let item of rolelist">{{item.role}}</button>
+    </div>
+  </div>
+ </div>
