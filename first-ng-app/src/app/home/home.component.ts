@@ -10,7 +10,7 @@
 
 // }
 
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms'; // ✅ Import this
 
 @Component({
@@ -22,6 +22,7 @@ import { FormsModule } from '@angular/forms'; // ✅ Import this
 })
 export class HomeComponent {
 
+  homeMessage=signal('Hello, world!');
   // keyUpHandler(){
   //   console.log('user pressed the key!');
   // }
